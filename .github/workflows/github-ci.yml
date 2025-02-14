@@ -19,9 +19,9 @@ jobs:
 
       - name: Ajustar permissões do Cypress
         run: |
-          sudo mkdir -p /tmp/.cache/Cypress
-          sudo chown -R root:root /tmp/.cache/Cypress
-          sudo chmod -R 777 /tmp/.cache/Cypress
+          mkdir -p /tmp/.cache/Cypress
+          chown -R root:root /tmp/.cache/Cypress
+          chmod -R 777 /tmp/.cache/Cypress
           ls -la /tmp/.cache/Cypress # Verificar permissões
 
       - name: Cypress run
@@ -49,9 +49,9 @@ jobs:
 
       - name: Ajustar permissões do Cypress
         run: |
-          sudo mkdir -p /tmp/.cache/Cypress
-          sudo chown -R root:root /tmp/.cache/Cypress
-          sudo chmod -R 777 /tmp/.cache/Cypress
+          mkdir -p /tmp/.cache/Cypress
+          chown -R root:root /tmp/.cache/Cypress
+          chmod -R 777 /tmp/.cache/Cypress
           ls -la /tmp/.cache/Cypress # Verificar permissões
 
       - name: Cypress run
@@ -79,9 +79,9 @@ jobs:
 
       - name: Ajustar permissões do Cypress
         run: |
-          sudo mkdir -p /tmp/.cache/Cypress
-          sudo chown -R root:root /tmp/.cache/Cypress
-          sudo chmod -R 777 /tmp/.cache/Cypress
+          mkdir -p /tmp/.cache/Cypress
+          chown -R root:root /tmp/.cache/Cypress
+          chmod -R 777 /tmp/.cache/Cypress
           ls -la /tmp/.cache/Cypress # Verificar permissões
 
       - name: Cypress run
