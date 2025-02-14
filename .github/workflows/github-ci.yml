@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
         image: cypress/browsers:node18.12.0-chrome106-ff106
-        options: --user root # Executa como root para evitar problemas de permissão
+        options: --user 1001:1001 # Executa como usuário não root
     steps:
       - name: Get code
         uses: actions/checkout@v3.3.0
@@ -20,7 +20,7 @@ jobs:
       - name: Ajustar permissões do Cypress
         run: |
           mkdir -p /tmp/.cache/Cypress
-          chown -R root:root /tmp/.cache/Cypress
+          chown -R 1001:1001 /tmp/.cache/Cypress
           chmod -R 777 /tmp/.cache/Cypress
           ls -la /tmp/.cache/Cypress # Verificar permissões
 
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
         image: cypress/browsers:node18.12.0-chrome106-ff106
-        options: --user root
+        options: --user 1001:1001
     steps:
       - name: Get code
         uses: actions/checkout@v3.3.0
@@ -50,7 +50,7 @@ jobs:
       - name: Ajustar permissões do Cypress
         run: |
           mkdir -p /tmp/.cache/Cypress
-          chown -R root:root /tmp/.cache/Cypress
+          chown -R 1001:1001 /tmp/.cache/Cypress
           chmod -R 777 /tmp/.cache/Cypress
           ls -la /tmp/.cache/Cypress # Verificar permissões
 
@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
         image: cypress/browsers:node18.12.0-chrome106-ff106
-        options: --user root
+        options: --user 1001:1001
     steps:
       - name: Get code
         uses: actions/checkout@v3.3.0
@@ -80,7 +80,7 @@ jobs:
       - name: Ajustar permissões do Cypress
         run: |
           mkdir -p /tmp/.cache/Cypress
-          chown -R root:root /tmp/.cache/Cypress
+          chown -R 1001:1001 /tmp/.cache/Cypress
           chmod -R 777 /tmp/.cache/Cypress
           ls -la /tmp/.cache/Cypress # Verificar permissões
 
