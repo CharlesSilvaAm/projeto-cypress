@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-13T20:08:46.746Z",
+    "end": "2025-02-13T20:08:48.465Z",
+    "duration": 1719,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1684552e-6ba3-4d9d-b774-e0a7abb26457",
+      "title": "",
+      "fullFile": "cypress\\e2e\\chavePix.cy.js",
+      "file": "cypress\\e2e\\chavePix.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c1b3d34b-5cd2-4ef8-b310-eb763d294a24",
+          "title": "Chave Pix",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validar cadastrar chave pix com sucesso",
+              "fullTitle": "Chave Pix Validar cadastrar chave pix com sucesso",
+              "timedOut": null,
+              "duration": 597,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(5000);\ntransferPage.elements.btnGerenciarPix().should('be.visible').click();\ntransferPage.elements.btnCriarChavePix().should('be.visible').click();",
+              "err": {
+                "message": "ReferenceError: transferPage is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Chave Pix`",
+                "estack": "ReferenceError: transferPage is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Chave Pix`\n    at Context.eval (webpack://cypress/./cypress/e2e/chavePix.cy.js:7:12)\n    at getRet (https://testathon-dbcbank-front-time5-vs2.onrender.com/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (https://testathon-dbcbank-front-time5-vs2.onrender.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://testathon-dbcbank-front-time5-vs2.onrender.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://testathon-dbcbank-front-time5-vs2.onrender.com/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (https://testathon-dbcbank-front-time5-vs2.onrender.com/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (https://testathon-dbcbank-front-time5-vs2.onrender.com/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (https://testathon-dbcbank-front-time5-vs2.onrender.com/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (https://testathon-dbcbank-front-time5-vs2.onrender.com/__cypress/runner/cypress_runner.js:1777:23)",
+                "diff": null
+              },
+              "uuid": "11a9f677-4041-4767-b105-544922840450",
+              "parentUUID": "c1b3d34b-5cd2-4ef8-b310-eb763d294a24",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "11a9f677-4041-4767-b105-544922840450"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 597,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

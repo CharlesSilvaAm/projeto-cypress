@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-13T20:20:00.485Z",
+    "end": "2025-02-13T20:20:11.729Z",
+    "duration": 11244,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d28b2f19-e68c-419b-b115-5267703e26b7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fdb14aa8-f9a0-45e2-9fb2-2873a33f9ebe",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login com sucesso",
+              "fullTitle": "Login Login com sucesso",
+              "timedOut": null,
+              "duration": 5750,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = _loginData.default.admin;\n_loginPage.default.login(user);\n_loginPage.default.messageSuccess();",
+              "err": {},
+              "uuid": "966033ff-18d5-43e4-983f-4fb8ff2f280f",
+              "parentUUID": "fdb14aa8-f9a0-45e2-9fb2-2873a33f9ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Tentativa de login com usuário invalido",
+              "fullTitle": "Login Tentativa de login com usuário invalido",
+              "timedOut": null,
+              "duration": 1881,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = _loginData.default.user_invalid;\n_loginPage.default.login(user);\n_loginPage.default.messageInvalid();",
+              "err": {},
+              "uuid": "1ebc0b87-3f79-42c3-955e-b2ea2c816d80",
+              "parentUUID": "fdb14aa8-f9a0-45e2-9fb2-2873a33f9ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Tentativa de login com cpf em branco",
+              "fullTitle": "Login Tentativa de login com cpf em branco",
+              "timedOut": null,
+              "duration": 1088,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = _loginData.default.cpf_empty;\n_loginPage.default.login(user);\n_loginPage.default.messageInvalid();",
+              "err": {},
+              "uuid": "48fe3015-5fbf-48f9-ba9b-7b436520a844",
+              "parentUUID": "fdb14aa8-f9a0-45e2-9fb2-2873a33f9ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Tentativa de login com senha em branco",
+              "fullTitle": "Login Tentativa de login com senha em branco",
+              "timedOut": null,
+              "duration": 1064,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = _loginData.default.password_empty;\n_loginPage.default.login(user);\n_loginPage.default.messageInvalid();",
+              "err": {},
+              "uuid": "7947e50e-5c7a-4a33-93e2-8d4412a344e7",
+              "parentUUID": "fdb14aa8-f9a0-45e2-9fb2-2873a33f9ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação de botão Entrar com campos vazios",
+              "fullTitle": "Login Validação de botão Entrar com campos vazios",
+              "timedOut": null,
+              "duration": 203,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = _loginData.default.user_empty;\n_loginPage.default.go();\n_loginPage.default.fill(user);\n_loginPage.default.btnLoginDisabled();",
+              "err": {},
+              "uuid": "be417f9e-3faa-4913-8ce5-71f064f7aafc",
+              "parentUUID": "fdb14aa8-f9a0-45e2-9fb2-2873a33f9ebe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "966033ff-18d5-43e4-983f-4fb8ff2f280f",
+            "1ebc0b87-3f79-42c3-955e-b2ea2c816d80",
+            "48fe3015-5fbf-48f9-ba9b-7b436520a844",
+            "7947e50e-5c7a-4a33-93e2-8d4412a344e7",
+            "be417f9e-3faa-4913-8ce5-71f064f7aafc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9986,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "admin": {
+        "cpf": "494.629.550-00",
+        "password": "Te$te123"
+    },
+
+    "user_invalid": {
+        "cpf": "000.000.000-00",
+        "password": "Te$te123"
+    },
+
+    "cpf_empty": {
+        "cpf": " ",
+        "password": "Te$te123"
+    },
+
+    "password_empty": {
+        "cpf": "494.629.550-00",
+        "password": " "
+    },
+
+    "user_empty": {
+        "cpf": "",
+        "password": ""
+    }
+
+}

@@ -1,0 +1,20 @@
+{
+    "admin": {
+        "cpf": "494.629.550-00",
+        "password": "Te$te123",
+        "branch": "0001",
+        "account": "23277",
+        "digit": "9",
+        "transactionPwd": "8520"
+    },
+
+    "recipientUser": {
+        "cpf": "126.725.010-09",
+        "password": "Senha!23",
+        "branch": "0001",
+        "account": "23277",
+        "digit": "9",
+        "transactionPwd": "1423"
+    }
+
+}

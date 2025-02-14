@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-13T20:08:31.016Z",
+    "end": "2025-02-13T20:08:44.893Z",
+    "duration": 13877,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c9837b97-1a16-4c7c-8bc5-2327c39eaab1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro.cy.js",
+      "file": "cypress\\e2e\\cadastro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a9be235e-cbc9-458d-96d2-3a8aa0400f0c",
+          "title": "cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastro com sucesso",
+              "fullTitle": "cadastro Cadastro com sucesso",
+              "timedOut": null,
+              "duration": 9173,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const inputBankDetails = _cadastroDta.default.data_bank_details;\n_cadastroPage.default.register();\n_cadastroPage.default.registerBankDetails(inputBankDetails);\n_cadastroPage.default.messageRegisterSuccess();",
+              "err": {},
+              "uuid": "fb464e8c-0401-42d1-b2eb-cee65d713f70",
+              "parentUUID": "a9be235e-cbc9-458d-96d2-3a8aa0400f0c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fb464e8c-0401-42d1-b2eb-cee65d713f70"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9173,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
