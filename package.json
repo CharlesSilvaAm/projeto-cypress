@@ -10,14 +10,26 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
     "allure-cypress": "^2.0.0",
     "cpf-cnpj-validator": "^1.0.3"
+=======
+    "cpf-cnpj-validator": "^1.0.3",
+    "cypress": "^12.10.0",
+    "allure-cypress": "^2.0.0"
+>>>>>>> 61aedeb9607b12714b7431e3a2170c113404251c
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^6.0.2",
     "@faker-js/faker": "^9.5.0",
     "@shelex/cypress-allure-plugin": "^2.40.2",
+<<<<<<< HEAD
     "cypress": "^14.0.3",
     "cypress-mochawesome-reporter": "^3.8.2"
+=======
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress": "^12.10.0",
+    "allure-cypress": "^2.0.0"
+>>>>>>> 61aedeb9607b12714b7431e3a2170c113404251c
   }
 }

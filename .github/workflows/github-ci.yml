@@ -1,0 +1,98 @@
+name: Cypress Claud
+
+on:
+  workflow_dispatch:
+    inputs:
+      spec:
+         description: Run by cypress command line
+         default: cypress/e2e/*
+
+jobs:
+  cypress-e2e-electron:
+    runs-on: ubuntu-latest
+    container:
+        image: cypress/browsers:node18.12.0-chrome106-ff106
+        options: --user 1001:1001 # Executa como usuário não root
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3.3.0
+
+      - name: Ajustar permissões do Cypress
+        run: |
+          mkdir -p /tmp/.cache/Cypress
+          chown -R 1001:1001 /tmp/.cache/Cypress
+          chmod -R 777 /tmp/.cache/Cypress
+          ls -la /tmp/.cache/Cypress # Verificar permissões
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.0.8
+        with:
+          install-command: yarn install
+          browser: electron
+          record: true
+          group: UI Electron
+          spec: ${{ github.event.inputs.spec }}
+        env:
+          CYPRESS_CACHE_FOLDER: /tmp/.cache/Cypress
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB: ${{ secrets.GITHUB_TOKEN }}
+
+  cypress-e2e-chrome:
+    needs: cypress-e2e-electron
+    runs-on: ubuntu-latest
+    container:
+        image: cypress/browsers:node18.12.0-chrome106-ff106
+        options: --user 1001:1001
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3.3.0
+
+      - name: Ajustar permissões do Cypress
+        run: |
+          mkdir -p /tmp/.cache/Cypress
+          chown -R 1001:1001 /tmp/.cache/Cypress
+          chmod -R 777 /tmp/.cache/Cypress
+          ls -la /tmp/.cache/Cypress # Verificar permissões
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.0.8
+        with:
+          install-command: yarn install
+          browser: chrome
+          record: true
+          group: UI Chrome
+          spec: ${{ github.event.inputs.spec }}
+        env:
+          CYPRESS_CACHE_FOLDER: /tmp/.cache/Cypress
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB: ${{ secrets.GITHUB_TOKEN }}
+
+  cypress-e2e-firefox:
+    needs: cypress-e2e-chrome
+    runs-on: ubuntu-latest
+    container:
+        image: cypress/browsers:node18.12.0-chrome106-ff106
+        options: --user 1001:1001
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3.3.0
+
+      - name: Ajustar permissões do Cypress
+        run: |
+          mkdir -p /tmp/.cache/Cypress
+          chown -R 1001:1001 /tmp/.cache/Cypress
+          chmod -R 777 /tmp/.cache/Cypress
+          ls -la /tmp/.cache/Cypress # Verificar permissões
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.0.8
+        with:
+          install-command: yarn install
+          browser: firefox
+          record: true
+          group: UI Firefox
+          spec: ${{ github.event.inputs.spec }}
+        env:
+          CYPRESS_CACHE_FOLDER: /tmp/.cache/Cypress
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB: ${{ secrets.GITHUB_TOKEN }}
