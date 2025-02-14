@@ -5,7 +5,7 @@ on:
     inputs:
       spec:
          description: Run by cypress command line
-         default: TaskFinal/cypress/e2e/*
+         default: cypress/e2e/*
 
 jobs:
   cypress-e2e-electron:
