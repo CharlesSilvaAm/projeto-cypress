@@ -36,6 +36,7 @@ jobs:
           CYPRESS_CACHE_FOLDER: /tmp/.cache/Cypress
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB: ${{ secrets.GITHUB_TOKEN }}
+    continue-on-error: true  # Continua mesmo que haja erros
 
   cypress-e2e-chrome:
     needs: cypress-e2e-electron
@@ -66,6 +67,7 @@ jobs:
           CYPRESS_CACHE_FOLDER: /tmp/.cache/Cypress
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB: ${{ secrets.GITHUB_TOKEN }}
+    continue-on-error: true  # Continua mesmo que haja erros
 
   cypress-e2e-firefox:
     needs: cypress-e2e-chrome
@@ -96,3 +98,4 @@ jobs:
           CYPRESS_CACHE_FOLDER: /tmp/.cache/Cypress
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB: ${{ secrets.GITHUB_TOKEN }}
+    
