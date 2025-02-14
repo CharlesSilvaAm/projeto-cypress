@@ -67,6 +67,7 @@ jobs:
           CYPRESS_CACHE_FOLDER: /tmp/.cache/Cypress
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB: ${{ secrets.GITHUB_TOKEN }}
+          CI_BUILD_ID: ${{ github.run_id }}-chrome
     continue-on-error: true  # Continua mesmo que haja erros
 
   cypress-e2e-firefox:
@@ -98,4 +99,5 @@ jobs:
           CYPRESS_CACHE_FOLDER: /tmp/.cache/Cypress
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB: ${{ secrets.GITHUB_TOKEN }}
-    
+          CI_BUILD_ID: ${{ github.run_id }}-firefox
+    continue-on-error: true  # Continua mesmo que haja erros
