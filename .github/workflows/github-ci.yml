@@ -14,7 +14,12 @@ jobs:
       image: cypress/browsers:node18.12.0-chrome103-ff107
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.3.0
+
+      - name: Ajustar permissões do Cypress
+        run: |
+          mkdir -p /github/home/.cache/Cypress
+          sudo chown -R 1001:1001 /github/home/.cache/Cypress
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
@@ -25,6 +30,7 @@ jobs:
           group: UI Electron
           spec: ${{ github.event.inputs.spec }}
         env:
+          CYPRESS_CACHE_FOLDER: /github/home/.cache/Cypress
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB: ${{ secrets.GITHUB_TOKEN }}
 
@@ -35,7 +41,12 @@ jobs:
       image: cypress/browsers:node18.12.0-chrome103-ff107
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.3.0
+
+      - name: Ajustar permissões do Cypress
+        run: |
+          mkdir -p /github/home/.cache/Cypress
+          sudo chown -R 1001:1001 /github/home/.cache/Cypress
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
@@ -46,6 +57,7 @@ jobs:
           group: UI Chrome
           spec: ${{ github.event.inputs.spec }}
         env:
+          CYPRESS_CACHE_FOLDER: /github/home/.cache/Cypress
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB: ${{ secrets.GITHUB_TOKEN }}
 
@@ -56,7 +68,12 @@ jobs:
       image: cypress/browsers:node18.12.0-chrome103-ff107
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.3.0
+
+      - name: Ajustar permissões do Cypress
+        run: |
+          mkdir -p /github/home/.cache/Cypress
+          sudo chown -R 1001:1001 /github/home/.cache/Cypress
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
@@ -67,5 +84,6 @@ jobs:
           group: UI Firefox
           spec: ${{ github.event.inputs.spec }}
         env:
+          CYPRESS_CACHE_FOLDER: /github/home/.cache/Cypress
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB: ${{ secrets.GITHUB_TOKEN }}
