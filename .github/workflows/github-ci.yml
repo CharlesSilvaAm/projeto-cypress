@@ -1,17 +1,18 @@
-name: Cypress Cloud
+name: Cypress Claud
 
 on:
   workflow_dispatch:
     inputs:
       spec:
-        description: Run by Cypress command line
-        default: cypress/e2e/*
+         description: Run by cypress command line
+         default: cypress/e2e/*
 
 jobs:
   cypress-e2e-electron:
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node18.12.0-chrome103-ff107
+    container: 
+        image: cypress/browsers:node18.12.0-chrome106-ff106
+        options: --user root # Executa como root para evitar problemas de permissão
     steps:
       - name: Get code
         uses: actions/checkout@v3.3.0
@@ -19,10 +20,11 @@ jobs:
       - name: Ajustar permissões do Cypress
         run: |
           mkdir -p /github/home/.cache/Cypress
-          sudo chown -R 1001:1001 /github/home/.cache/Cypress
+          chown -R 1001:1001 /github/home/.cache/Cypress
+          chmod -R 777 /github/home/.cache/Cypress
 
       - name: Cypress run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v5.0.8
         with:
           install-command: yarn install
           browser: electron
@@ -37,8 +39,9 @@ jobs:
   cypress-e2e-chrome:
     needs: cypress-e2e-electron
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node18.12.0-chrome103-ff107
+    container: 
+        image: cypress/browsers:node18.12.0-chrome106-ff106
+        options: --user root
     steps:
       - name: Get code
         uses: actions/checkout@v3.3.0
@@ -46,10 +49,11 @@ jobs:
       - name: Ajustar permissões do Cypress
         run: |
           mkdir -p /github/home/.cache/Cypress
-          sudo chown -R 1001:1001 /github/home/.cache/Cypress
+          chown -R 1001:1001 /github/home/.cache/Cypress
+          chmod -R 777 /github/home/.cache/Cypress
 
       - name: Cypress run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v5.0.8
         with:
           install-command: yarn install
           browser: chrome
@@ -64,8 +68,9 @@ jobs:
   cypress-e2e-firefox:
     needs: cypress-e2e-chrome
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node18.12.0-chrome103-ff107
+    container: 
+        image: cypress/browsers:node18.12.0-chrome106-ff106
+        options: --user root
     steps:
       - name: Get code
         uses: actions/checkout@v3.3.0
@@ -73,10 +78,11 @@ jobs:
       - name: Ajustar permissões do Cypress
         run: |
           mkdir -p /github/home/.cache/Cypress
-          sudo chown -R 1001:1001 /github/home/.cache/Cypress
+          chown -R 1001:1001 /github/home/.cache/Cypress
+          chmod -R 777 /github/home/.cache/Cypress
 
       - name: Cypress run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v5.0.8
         with:
           install-command: yarn install
           browser: firefox
