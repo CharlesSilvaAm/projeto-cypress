@@ -5,7 +5,7 @@ on:
     inputs:
       spec:
          description: Run by cypress command line
-         default: cypress/e2e/*
+         default: TaskFinal/cypress/e2e/*
 
 jobs:
   cypress-e2e-electron:
@@ -21,7 +21,7 @@ jobs:
         run: |
           mkdir -p /github/home/.cache/Cypress
           chown -R 1001:1001 /github/home/.cache/Cypress
-          chmod -R 777 /github/home/.cache/Cypress
+          chmod -R 777 /github/home/.cache/Cypress # Garantindo permissões de escrita
 
       - name: Cypress run
         uses: cypress-io/github-action@v5.0.8
